@@ -1,0 +1,16 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <ul class="list-group" *ngFor="let user of users">
+        <li class="list-group-item">
+          <a [routerLink]="['/users', user.id, user.name]">{{user.name}}</a></li>
+      </ul>
+    </div>
+
+    <div class="col-sm-6">
+       <router-outlet></router-outlet>
+    </div>
+  </div>
+
+</div>

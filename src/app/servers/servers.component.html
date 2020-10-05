@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+       <ul class="list-group" *ngFor="let serve of servers">
+       <li class="list-group-item">
+         <a [routerLink]="['/servers', serve.id]"
+         [queryParams]="{allowEdit: serve.id === 3 ? '1' :'0'}"
+         fragment ="loading">
+         {{serve.name}}</a></li>
+       </ul>
+    </div>
+
+    <div class="col-sm-6">
+      <!-- <button class="btn btn-primary" (click)="onReload()">Reload Page</button>
+   <app-server-edit></app-server-edit>
+   <hr>
+   <app-server></app-server> -->
+   <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+<!--
+[routerLink]="['/servers', 5, 'edit']"
+         [queryParams]="{allowed: true}"
+         fragment ='loading' -->
+
